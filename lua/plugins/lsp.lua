@@ -12,7 +12,7 @@ return {
 			-- Format on save
 			require("lsp-format").setup({})
 
-			-- Setup language servers
+			-- NOTE: Put LSP Configurations here, make sure the LSP server is installed with mason
 			local servers = {
 				marksman = {},
 				jdtls = {},
@@ -66,7 +66,6 @@ return {
 					"jdtls",
 					"clangd",
 					"lua_ls",
-					"nixd",
 				},
 				automatic_installation = true,
 			})
