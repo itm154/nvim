@@ -5,7 +5,7 @@ return {
 	opts = {
 		delay = 100,
 		disabled_filetypes = {
-			"Neotree",
+			"neo-tree",
 			"TelescopePrompt",
 			"alpha",
 			"lazy",

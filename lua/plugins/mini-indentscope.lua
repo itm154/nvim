@@ -9,7 +9,7 @@ return {
 		},
 		-- Disable for specific filetypes
 		disabled_filetypes = {
-			"NvimTree",
+			"neo-tree",
 			"TelescopePrompt",
 			"alpha",
 			"help",
