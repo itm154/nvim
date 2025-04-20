@@ -121,7 +121,56 @@ local keymaps = {
 	-- =====================================
 	-- LSP KEYMAPS
 	-- =====================================
-	-- Navigation
+	-- Show all diagnostics
+	{
+		mode = "n",
+		key = "<leader>tt",
+		action = "<cmd>Trouble diagnostics toggle<cr>",
+		options = { desc = "Diagnostics (Trouble)" },
+	},
+
+	-- Buffer-local diagnostics
+	{
+		mode = "n",
+		key = "<leader>tb",
+		action = "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+		options = { desc = "Buffer Diagnostics (Trouble)" },
+	},
+
+	-- Workspace symbols
+	{
+		mode = "n",
+		key = "<leader>ts",
+		action = "<cmd>Trouble symbols toggle focus=false<cr>",
+		options = { desc = "Workspace Symbols (Trouble)" },
+	},
+
+	-- LSP definitions/references/etc.
+	{
+		mode = "n",
+		key = "<leader>tl",
+		action = "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+		options = { desc = "LSP Definitions / References (Trouble)" },
+	},
+
+	-- Location list
+	{
+		mode = "n",
+		key = "<leader>tl",
+		action = "<cmd>Trouble loclist toggle<cr>",
+		options = { desc = "Location List (Trouble)" },
+	},
+
+	-- Quickfix list
+	{
+		mode = "n",
+		key = "<leader>tq",
+		action = "<cmd>Trouble qflist toggle<cr>",
+		options = { desc = "Quickfix List (Trouble)" },
+	},
+
+	-- ORIGINAL LSP KEYS (that don't have Trouble replacements)
+
 	{
 		mode = "n",
 		key = "gd",
@@ -158,7 +207,6 @@ local keymaps = {
 		action = "<cmd>lua vim.lsp.buf.hover()<CR>",
 		options = { silent = true, desc = "Hover documentation" },
 	},
-	-- Other LSP
 	{
 		mode = "n",
 		key = "<leader>cw",
