@@ -303,7 +303,7 @@ local keymaps = {
 	},
 	{
 		mode = "n",
-		key = "<leader>ma",
+		key = "<leader>fm",
 		action = "<cmd>Telescope marks<CR>",
 		options = { desc = "Telescope find marks" },
 	},
@@ -321,13 +321,13 @@ local keymaps = {
 	},
 	{
 		mode = "n",
-		key = "<leader>cm",
+		key = "<leader>fc",
 		action = "<cmd>Telescope git_commits<CR>",
 		options = { desc = "Telescope git commits" },
 	},
 	{
 		mode = "n",
-		key = "<leader>gt",
+		key = "<leader>fg",
 		action = "<cmd>Telescope git_status<CR>",
 		options = { desc = "Telescope git status" },
 	},
