@@ -7,8 +7,8 @@ return {
 		component_separators = "",
 		section_separators = "",
 		disabled_filetypes = {
-			statusline = { "neotree" },
-			winbar = { "neotree" },
+			statusline = { "neo-tree" },
+			winbar = { "neo-tree" },
 		},
 		ignore_focus = {},
 		always_divide_middle = true,

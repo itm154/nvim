@@ -9,7 +9,7 @@ return {
 		},
 		-- Disable for specific filetypes
 		disabled_filetypes = {
-			"neo-tree",
+			"neo-tree-preview",
 			"TelescopePrompt",
 			"alpha",
 			"help",

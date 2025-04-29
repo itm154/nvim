@@ -17,6 +17,7 @@ return {
 				marksman = {},
 				jdtls = {},
 				clangd = {},
+				r_language_server = {},
 				lua_ls = {
 					settings = {
 						Lua = {
