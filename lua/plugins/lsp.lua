@@ -4,16 +4,11 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			"lukas-reineke/lsp-format.nvim",
+			"saghen/blink.cmp",
 		},
-		config = function()
-			local lspconfig = require("lspconfig")
-
-			-- Format on save
-			require("lsp-format").setup({})
-
-			-- NOTE: Put LSP Configurations here, make sure the LSP server is installed with mason
-			local servers = {
+		-- NOTE: Put LSP Configurations here, make sure the LSP server is installed with mason
+		opts = {
+			servers = {
 				marksman = {},
 				jdtls = {},
 				clangd = {},
@@ -32,22 +27,16 @@ return {
 						},
 					},
 				},
-			}
+			},
+		},
 
-			-- Enable inlay hints (requires neovim 0.10+)
-			vim.api.nvim_create_autocmd("LspAttach", {
-				callback = function(args)
-					local client = vim.lsp.get_client_by_id(args.data.client_id)
-					if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-						vim.lsp.inlay_hint.enable(true)
-					end
-				end,
-			})
-
-			for server, opts in pairs(servers) do
-				lspconfig[server].setup(vim.tbl_deep_extend("force", {
-					on_attach = require("lsp-format").on_attach,
-				}, opts))
+		config = function(_, opts)
+			local lspconfig = require("lspconfig")
+			for server, config in pairs(opts.servers) do
+				-- passing config.capabilities to blink.cmp merges with the capabilities in your
+				-- `opts[server].capabilities, if you've defined it
+				config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+				lspconfig[server].setup(config)
 			end
 		end,
 	},
