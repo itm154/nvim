@@ -361,6 +361,16 @@ local keymaps = {
 		end,
 		options = { desc = "Buffer Local Keymaps (which-key)" },
 	},
+
+	-- =====================================
+	-- LAZYGIT
+	-- =====================================
+	{
+		mode = "n",
+		key = "<leader>lg",
+		action = "<cmd>LazyGit<cr>",
+		options = { desc = "Open LazyGit" },
+	},
 }
 
 -- Apply all keymaps
