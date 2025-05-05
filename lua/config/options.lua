@@ -46,6 +46,3 @@ vim.opt.undofile = true
 
 -- Keep cursor 4 lines from screen edge when scrolling
 vim.opt.scrolloff = 4
-
--- Theme
-vim.cmd.colorscheme("catppuccin")

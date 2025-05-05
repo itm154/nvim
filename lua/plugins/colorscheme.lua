@@ -1,8 +1,9 @@
 return {
 	"catppuccin/nvim",
-	lazy = true,
 	name = "catppuccin",
+	priority = 1000,
 	opts = {
+		transparent_background = true,
 		integrations = {
 			aerial = true,
 			alpha = true,
@@ -41,6 +42,9 @@ return {
 			treesitter_context = true,
 			which_key = true,
 		},
+		config = function()
+			vim.cmd.colorscheme("catppuccin")
+		end,
 	},
 	specs = {
 		{
