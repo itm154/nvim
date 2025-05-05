@@ -9,7 +9,6 @@ return {
 		-- NOTE: Put LSP Configurations here, make sure the LSP server is installed with mason
 		opts = {
 			servers = {
-				marksman = {},
 				jdtls = {},
 				clangd = {},
 				r_language_server = {},
@@ -52,7 +51,6 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"marksman",
 					"jdtls",
 					"clangd",
 					"lua_ls",
