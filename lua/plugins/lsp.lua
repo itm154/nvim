@@ -12,6 +12,12 @@ return {
 				jdtls = {},
 				clangd = {},
 				r_language_server = {},
+				tinymist = {
+					settings = {
+						formatterMode = "typstyle",
+						exportPdf = "never",
+					},
+				},
 				lua_ls = {
 					settings = {
 						Lua = {
