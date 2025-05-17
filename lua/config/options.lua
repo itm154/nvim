@@ -1,5 +1,3 @@
--- Neovim options configuration
-
 -- Set clipboard to use system clipboard
 vim.opt.clipboard = "unnamedplus"
 

@@ -68,7 +68,13 @@ return {
 			lua = { "stylua" },
 			markdown = { "deno_fmt" },
 			nix = { "nixfmt" },
-			python = { "isort" },
+			python = function(bufnr)
+				if require("conform").get_formatter_info("ruff_format", bufnr).available then
+					return { "ruff_format" }
+				else
+					return { "isort", "black" }
+				end
+			end,
 			rust = { "rustfmt" },
 			sh = { "shellcheck", "shellharden", "shfmt", stop_after_first = true },
 			sql = { "sqlfluff" },
