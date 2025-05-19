@@ -3,15 +3,11 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 		},
 		-- NOTE: Put LSP Configurations here, make sure the LSP server is installed with mason
 		opts = {
 			servers = {
-				jdtls = {},
-				clangd = {},
-				r_language_server = {},
 				tinymist = {
 					settings = {
 						formatterMode = "typstyle",
@@ -53,16 +49,16 @@ return {
 	},
 
 	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"jdtls",
-					"clangd",
-					"lua_ls",
-				},
-				automatic_installation = true,
-			})
-		end,
+		"mason-org/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"clangd",
+			},
+		},
+		dependencies = {
+			"mason-org/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
 	},
 }
