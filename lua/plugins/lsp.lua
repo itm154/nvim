@@ -53,6 +53,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"lua_ls",
+				"tinymist",
 				"clangd",
 			},
 		},
