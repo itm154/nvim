@@ -371,6 +371,22 @@ local keymaps = {
 		action = "<cmd>LazyGit<cr>",
 		options = { desc = "Open LazyGit" },
 	},
+
+	-- =====================================
+	-- TROUBLE
+	-- =====================================
+	{
+		mode = "n",
+		key = "<leader>tn",
+		action = "<cmd>TodoTrouble toggle<cr>",
+		options = { desc = "Notes (Trouble)" },
+	},
+	{
+		mode = "n",
+		key = "<leader>fn",
+		action = "<cmd>TodoTelescope<CR>",
+		options = { desc = "Telescope find all notes" },
+	},
 }
 
 -- Apply all keymaps
