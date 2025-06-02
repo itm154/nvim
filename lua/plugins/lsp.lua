@@ -8,6 +8,7 @@ return {
 		-- NOTE: Put LSP Configurations here, make sure the LSP server is installed with mason
 		opts = {
 			servers = {
+				rust_analyzer = {},
 				tinymist = {
 					settings = {
 						formatterMode = "typstyle",
