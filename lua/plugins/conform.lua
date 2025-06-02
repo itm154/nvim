@@ -87,6 +87,7 @@ return {
 			},
 			xml = { "xmlformat", "xmllint", stop_after_first = true },
 			yaml = { "yamlfmt" },
+			["_"] = { "trim_whitespace", lsp_format = "prefer" },
 		},
 
 		formatters = {
