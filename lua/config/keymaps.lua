@@ -387,6 +387,18 @@ local keymaps = {
 		action = "<cmd>TodoTelescope<CR>",
 		options = { desc = "Telescope find all notes" },
 	},
+
+	-- =====================================
+	-- TROUBLE
+	-- =====================================
+	{
+		mode = "n",
+		key = "<leader>ca",
+		action = function()
+			require("tiny-code-action").code_action()
+		end,
+		options = { silent = true, noremap = true, desc = "See code actions" },
+	},
 }
 
 -- Apply all keymaps
