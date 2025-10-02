@@ -8,7 +8,6 @@ return {
 		-- NOTE: Put LSP Configurations here, make sure the LSP server is installed with mason
 		opts = {
 			servers = {
-				rust_analyzer = {},
 				tinymist = {
 					settings = {
 						formatterMode = "typstyle",
@@ -32,14 +31,10 @@ return {
 			},
 		},
 
-		config = function(_, opts)
-			local lspconfig = require("lspconfig")
-			for server, config in pairs(opts.servers) do
-				-- passing config.capabilities to blink.cmp merges with the capabilities in your
-				-- `opts[server].capabilities, if you've defined it
-				config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-				lspconfig[server].setup(config)
-			end
+		config = function()
+			vim.lsp.enable("rust_analyzer")
+			vim.lsp.enable("lua_ls")
+			vim.lsp.enable("tinymist")
 		end,
 	},
 
