@@ -1,38 +1,45 @@
 # itm154's Neovim config
 
-## Install
+## Installation
 
 ### Linux
 
-- Remove all previous nvim directory
+Remove all previous Neovim configurations
 
 ```sh
-sudo rm -r ~/.config/nvim/
-sudo rm -r ~/.local/share/nvim/
-sudo rm -r ~/.local/state/nvim/
+$ rm -r ~/.config/nvim/
 ```
 
-- Clone the repository
+Delete Neovim cache
 
 ```sh
-git clone https://github.com/itm154/nvim ~/.config/nvim/
+$ rm -r ~/.local/share/nvim/
+$ rm -r ~/.local/state/nvim/
 ```
 
-- Launch Neovim
+Clone the repository into ~/.config/nvim
 
 ```sh
-nvim
+$ git clone https://github.com/itm154/nvim ~/.config/nvim/
 ```
+
+Launch Neovim
+
+```sh
+$ nvim
+```
+
+---
 
 ### Windows
 
-- Clone the repository
+Clone the repository
 
 ```ps1
 git clone https://github.com/itm154/nvim $HOME\AppData\Local\nvim
 ```
 
-- Launch Neovim
+Launch Neovim
 
 ```ps1
 nvim
