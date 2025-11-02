@@ -6,7 +6,6 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 
 -- Tab and indent settings
-vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = false
 vim.opt.tabstop = 2
