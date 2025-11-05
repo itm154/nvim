@@ -7,5 +7,7 @@ return {
 			["tinymist"] = "tinymist",
 			["websocat"] = "/usr/bin/websocat",
 		},
+
+		port = 12354,
 	},
 }
