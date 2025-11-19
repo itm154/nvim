@@ -346,6 +346,18 @@ local keymaps = {
 	},
 	{
 		mode = "n",
+		key = "<leader>fs",
+		action = "<cmd>lua require('fzf-lua').lsp_workspace_symbols()<CR>",
+		options = { desc = "FzfLua workspace symbol" },
+	},
+	{
+		mode = "n",
+		key = "<leader>fd",
+		action = "<cmd>lua require('fzf-lua').lsp_document_symbols()<CR>",
+		options = { desc = "FzfLua document symbol" },
+	},
+	{
+		mode = "n",
 		key = "<leader>fw",
 		action = "<cmd>lua require('fzf-lua').live_grep()<CR>",
 		options = { desc = "FzfLua live grep" },
