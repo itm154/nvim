@@ -28,14 +28,35 @@ return {
 						},
 					},
 				},
+				phpactor = {
+					settings = {
+						workspace_required = false,
+					},
+				},
+
+				basedpyright = {
+					settings = {
+						disableOrganizeImports = true,
+						basedpyright = {
+							analysis = {
+								-- ignore = { "*" },
+								typeCheckingMode = "standard",
+								diagnosticMode = "openFilesOnly",
+								useLibraryCodeForTypes = true,
+							},
+						},
+					},
+				},
 			},
 		},
 
 		config = function()
-			vim.lsp.enable("rust_analyzer")
-			vim.lsp.enable("lua_ls")
-			vim.lsp.enable("tinymist")
-			vim.lsp.enable("ruff")
+			vim.lsp.enable("rust_analyzer") -- rust
+			vim.lsp.enable("lua_ls") -- lua
+			vim.lsp.enable("tinymist") -- typst
+			vim.lsp.enable("phpactor") -- php
+			vim.lsp.enable("ruff") -- python
+			vim.lsp.enable("basedpyright") -- python
 		end,
 	},
 
