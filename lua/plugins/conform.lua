@@ -64,6 +64,12 @@ return {
 				timeout_ms = 2000,
 				stop_after_first = true,
 			},
+			html = {
+				"prettierd",
+				"prettier",
+				timeout_ms = 2000,
+				stop_after_first = true,
+			},
 			json = { "jq" },
 			lua = { "stylua" },
 			markdown = { "deno_fmt" },
