@@ -5,9 +5,8 @@ return {
 	opts = {
 		transparent_background = false,
 		integrations = {
-			fzf = true,
 			gitsigns = true,
-			illuminate = true,
+			lluminate = true,
 			lsp_trouble = true,
 			mason = true,
 			mini = true,
