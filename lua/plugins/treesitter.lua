@@ -35,6 +35,10 @@ return {
 			"vimdoc",
 			"yaml",
 			"nix",
+			-- R.nvim dependencies
+			"r",
+			"rnoweb",
+			"latex",
 		},
 		incremental_selection = {
 			enable = true,
