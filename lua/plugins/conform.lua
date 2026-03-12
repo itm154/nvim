@@ -54,6 +54,7 @@ return {
 			javascriptreact = prettier,
 			typescriptreact = prettier,
 			svelte = { lsp_format = "prefer" },
+			astro = { lsp_format = "prefer" },
 			css = { "stylelint" },
 			html = prettier,
 			json = { "jq" },
