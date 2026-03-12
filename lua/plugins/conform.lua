@@ -13,13 +13,8 @@ vim.api.nvim_create_user_command("FormatEnable", function()
 	vim.g.disable_autoformat = false
 end, { desc = "Re-enable autoformat-on-save" })
 
-vim.api.nvim_create_user_command("FormatToggle", function(args)
-	if args.bang then
-		vim.b.disable_autoformat = not vim.b.disable_autoformat
-	else
-		vim.g.disable_autoformat = not vim.g.disable_autoformat
-	end
-end, { desc = "Toggle autoformat-on-save", bang = true })
+local prettier = { "prettierd", "prettier", stop_after_first = true }
+local shell = { "shellcheck", "shellharden", "shfmt", stop_after_first = true }
 
 return {
 	"stevearc/conform.nvim",
@@ -32,11 +27,13 @@ return {
 			if slow_format_filetypes[vim.bo[bufnr].filetype] then
 				return
 			end
+
 			local function on_format(err)
 				if err and err:match("timeout$") then
 					slow_format_filetypes[vim.bo[bufnr].filetype] = true
 				end
 			end
+
 			return { timeout_ms = 200, lsp_fallback = true }, on_format
 		end,
 
@@ -51,29 +48,20 @@ return {
 		end,
 
 		formatters_by_ft = {
-			bash = { "shellcheck", "shellharden", "shfmt", stop_after_first = true },
-			c = { "clang_format" },
-			cmake = { "cmake-format" },
-			cpp = { "clang_format" },
-			cs = { "csharpier" },
+			-- Web Dev
+			javascript = prettier,
+			typescript = prettier,
+			javascriptreact = prettier,
+			typescriptreact = prettier,
+			svelte = { lsp_format = "prefer" },
 			css = { "stylelint" },
-			fish = { "fish_indent" },
-			javascript = {
-				"prettierd",
-				"prettier",
-				timeout_ms = 2000,
-				stop_after_first = true,
-			},
-			html = {
-				"prettierd",
-				"prettier",
-				timeout_ms = 2000,
-				stop_after_first = true,
-			},
+			html = prettier,
 			json = { "jq" },
+			yaml = { "yamlfmt" },
+			toml = { "taplo" },
+
+			-- Systems & Scripting
 			lua = { "stylua" },
-			markdown = { "deno_fmt" },
-			nix = { "nixfmt" },
 			python = function(bufnr)
 				if require("conform").get_formatter_info("ruff_format", bufnr).available then
 					return { "ruff_format" }
@@ -82,37 +70,28 @@ return {
 				end
 			end,
 			rust = { "rustfmt" },
-			sh = { "shellcheck", "shellharden", "shfmt", stop_after_first = true },
+			nix = { "nixfmt" },
+			bash = shell,
+			sh = shell,
+			fish = { "fish_indent" },
+
+			-- C/C++
+			c = { "clang_format" },
+			cpp = { "clang_format" },
+			cmake = { "cmake-format" },
+
+			-- Docs & Others
+			markdown = { "deno_fmt" },
 			sql = { "sqlfluff" },
-			toml = { "taplo" },
-			typescript = {
-				"prettierd",
-				"prettier",
-				timeout_ms = 2000,
-				stop_after_first = true,
-			},
 			xml = { "xmlformat", "xmllint", stop_after_first = true },
-			yaml = { "yamlfmt" },
-			["_"] = { "trim_whitespace", lsp_format = "prefer" },
+			["_"] = { "trim_whitespace" },
 		},
 
+		-- 3. Custom Formatter Overrides
 		formatters = {
-			["cmake-format"] = { command = "cmake-format" },
-			csharpier = { command = "csharpier" },
-			deno_fmt = { command = "deno" },
-			isort = { command = "isort" },
-			jq = { command = "jq" },
-			nixfmt = { command = "nixfmt" },
-			prettierd = { command = "prettierd" },
-			rustfmt = { command = "rustfmt" },
-			shellcheck = { command = "shellcheck" },
-			shfmt = { command = "shfmt" },
-			shellharden = { command = "shellharden" },
-			stylelint = { command = "stylelint" },
-			stylua = { command = "stylua" },
-			taplo = { command = "taplo" },
-			xmlformat = { command = "xmlformat" },
-			yamlfmt = { command = "yamlfmt" },
+			deno_fmt = { command = "deno", args = { "fmt", "-" } },
+			prettier = { timeout_ms = 2000 },
+			prettierd = { timeout_ms = 2000 },
 		},
 	},
 }
