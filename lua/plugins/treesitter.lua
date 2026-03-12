@@ -99,6 +99,7 @@ return {
 			"lazy",
 			"mason",
 			"neo-tree",
+			"trouble",
 		}
 
 		-- Auto-install parsers and enable highlighting on FileType
