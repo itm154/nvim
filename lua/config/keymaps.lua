@@ -319,8 +319,8 @@ local keymaps = {
 	{
 		mode = "n",
 		key = "<leader>fn",
-		action = "<cmd>TodoTelescope<CR>",
-		options = { desc = "Telescope find all notes" },
+		action = "<cmd>TodoFzfLua<CR>",
+		options = { desc = "Fzfl find all notes" },
 	},
 
 	-- =====================================
