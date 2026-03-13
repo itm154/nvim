@@ -1,5 +1,3 @@
-local palette = require("catppuccin.palettes").get_palette()
-
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
