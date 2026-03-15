@@ -57,6 +57,8 @@ return {
 			astro = { lsp_format = "prefer" },
 			css = { "stylelint" },
 			html = prettier,
+
+			-- Key-Value Languages
 			json = { "jq" },
 			yaml = { "yamlfmt" },
 			toml = { "taplo" },
@@ -71,15 +73,14 @@ return {
 				end
 			end,
 			rust = { "rustfmt" },
-			nix = { "nixfmt" },
 			bash = shell,
 			sh = shell,
 			fish = { "fish_indent" },
 
-			-- C/C++
+			-- Systems Programming Language
 			c = { "clang_format" },
 			cpp = { "clang_format" },
-			cmake = { "cmake-format" },
+			java = { lsp_format = "prefer" },
 
 			-- Docs & Others
 			markdown = { "deno_fmt" },
@@ -88,7 +89,7 @@ return {
 			["_"] = { "trim_whitespace" },
 		},
 
-		-- 3. Custom Formatter Overrides
+		-- Formatter Overrides
 		formatters = {
 			deno_fmt = { command = "deno", args = { "fmt", "-" } },
 			prettier = { timeout_ms = 2000 },
