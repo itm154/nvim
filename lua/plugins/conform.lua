@@ -55,7 +55,7 @@ return {
 			typescriptreact = prettier,
 			svelte = { lsp_format = "prefer" },
 			astro = { lsp_format = "prefer" },
-			css = { "stylelint" },
+			css = prettier,
 			html = prettier,
 
 			-- Key-Value Languages

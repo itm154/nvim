@@ -100,6 +100,7 @@ return {
 			"mason",
 			"neo-tree",
 			"trouble",
+			"lazy_backdrop",
 		}
 
 		-- Auto-install parsers and enable highlighting on FileType

@@ -5,6 +5,15 @@ return {
 		{ "ibhagwan/fzf-lua" },
 	},
 	event = "LspAttach",
+	keys = {
+		{
+			"<leader>ca",
+			function()
+				require("tiny-code-action").code_action()
+			end,
+			desc = "See code actions",
+		},
+	},
 	opts = {
 		backend = "vim",
 		picker = "fzf-lua",
