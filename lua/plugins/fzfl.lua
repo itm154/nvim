@@ -1,6 +1,6 @@
 return {
 	"ibhagwan/fzf-lua",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-mini/mini.icons", opts = { mock_nvim_web_devicons = true } },
 	keys = {
 		{
 			"<leader>fa",

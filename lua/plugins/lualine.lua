@@ -1,6 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons", "bwpge/lualine-pretty-path" },
+	dependencies = { "nvim-mini/mini.icons", "bwpge/lualine-pretty-path", opts = {
+		mock_nvim_web_devicons = true,
+	} },
 	event = "VeryLazy",
 	config = function()
 		require("lualine").setup({

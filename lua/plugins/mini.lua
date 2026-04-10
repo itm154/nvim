@@ -1,11 +1,11 @@
 return {
 	{
-		"echasnovski/mini.comment",
+		"nvim-mini/mini.comment",
 		version = "*",
 		opts = {},
 	},
 	{
-		"echasnovski/mini.cursorword",
+		"nvim-mini/mini.cursorword",
 		version = "*",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
@@ -20,7 +20,7 @@ return {
 		},
 	},
 	{
-		"echasnovski/mini.indentscope",
+		"nvim-mini/mini.indentscope",
 		version = "*",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
@@ -38,15 +38,28 @@ return {
 		},
 	},
 	{
-		"echasnovski/mini.move",
+		"nvim-mini/mini.move",
 		version = "*",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {},
 	},
 	{
-		"echasnovski/mini.surround",
+		"nvim-mini/mini.surround",
 		version = "*",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {},
+	},
+	{
+		"nvim-mini/mini.icons",
+		config = function(_, opts)
+			local mini_icons = require("mini.icons")
+			local mock_nvim_web_devicons = opts.mock_nvim_web_devicons
+			opts.mock_nvim_web_devicons = nil
+			mini_icons.setup(opts)
+
+			if mock_nvim_web_devicons then
+				mini_icons.mock_nvim_web_devicons()
+			end
+		end,
 	},
 }

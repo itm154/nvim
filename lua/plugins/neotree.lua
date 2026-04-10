@@ -2,7 +2,7 @@ return {
 	"nvim-neo-tree/neo-tree.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		"nvim-mini/mini.icons",
 		"MunifTanjim/nui.nvim",
 	},
 	cmd = "Neotree",
@@ -34,18 +34,30 @@ return {
 			desc = "Toggle Neo-tree",
 		},
 	},
-	opts = {
-		filesystem = {
+	opts = function(_, opts)
+		local function on_move(data)
+			Snacks.rename.on_rename_file(data.source, data.destination)
+		end
+		local events = require("neo-tree.events")
+		opts.event_handlers = opts.event_handlers or {}
+		vim.list_extend(opts.event_handlers, {
+			{ event = events.FILE_MOVED, handler = on_move },
+			{ event = events.FILE_RENAMED, handler = on_move },
+		})
+
+		opts.filesystem = {
 			follow_current_file = {
 				enabled = true,
 			},
 			hijack_netrw_behavior = "open_current",
-		},
-		window = {
+		}
+		opts.window = {
 			width = 30,
 			mappings = {
 				["<space>"] = "none", -- Ensure space key doesn't conflict with leader
 			},
-		},
-	},
+		}
+
+		return opts
+	end,
 }
