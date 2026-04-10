@@ -1,6 +1,7 @@
 # itm154's Neovim config
 
-Personal Neovim configuration
+<img width="2690" height="1526" alt="image" src="https://github.com/user-attachments/assets/0f2b004c-b741-4a58-a4a1-9f574c383290" />
+
 
 ## Installation
 
