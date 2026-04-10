@@ -4,12 +4,13 @@ return {
 	opts = {
 		options = {
 			parsers = {
-				css_fn = true,
+				css = true,
 				tailwind = {
 					enable = true,
 					lsp = true,
 				},
 				sass = { enable = true },
+				lsp = true,
 			},
 		},
 	},

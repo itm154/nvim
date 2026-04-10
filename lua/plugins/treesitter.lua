@@ -11,43 +11,43 @@ return {
 	config = function()
 		local ts = require("nvim-treesitter")
 		local languages = {
-			-- Core & Neovim
-			"lua",
-			"luadoc",
-			"luap",
-			"vim",
-			"vimdoc",
-			"query",
-
-			-- Web Development
-			"html",
-			"css",
-			"javascript",
-			"typescript",
-			"tsx",
-			"svelte",
-
-			-- Systems & Scripting
-			"bash",
-			"c",
-			"cpp",
-			"python",
-			"nix",
-			"rust",
-
-			-- Data, Config & Docs
-			"json",
-			"yaml",
-			"toml",
-			"markdown",
-			"markdown_inline",
-			"regex",
-
-			-- R & Scientific Writing
-			"r",
-			"rnoweb",
-			"latex",
-			"typst",
+			-- -- Core & Neovim
+			-- "lua",
+			-- "luadoc",
+			-- "luap",
+			-- "vim",
+			-- "vimdoc",
+			-- "query",
+			--
+			-- -- Web Development
+			-- "html",
+			-- "css",
+			-- "javascript",
+			-- "typescript",
+			-- "tsx",
+			-- "svelte",
+			--
+			-- -- Systems & Scripting
+			-- "bash",
+			-- "c",
+			-- "cpp",
+			-- "python",
+			-- "nix",
+			-- "rust",
+			--
+			-- -- Data, Config & Docs
+			-- "json",
+			-- "yaml",
+			-- "toml",
+			-- "markdown",
+			-- "markdown_inline",
+			-- "regex",
+			--
+			-- -- R & Scientific Writing
+			-- "r",
+			-- "rnoweb",
+			-- "latex",
+			-- "typst",
 		}
 		-- State tracking for async parser loading
 		local parsers_loaded = {}
@@ -101,6 +101,10 @@ return {
 			"neo-tree",
 			"trouble",
 			"lazy_backdrop",
+			"cmd",
+			"dialog",
+			"msg",
+			"pager",
 		}
 
 		-- Auto-install parsers and enable highlighting on FileType

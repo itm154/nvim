@@ -66,9 +66,7 @@ nvim
 - mini-move
 - mini-surround
 - neotree
-- R-nvim
 - tiny-code-action
-- todo-comments
 - treesitter
 - trouble
 - typst-preview

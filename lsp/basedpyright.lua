@@ -1,4 +1,6 @@
-vim.lsp.config("basedpyright", {
+return {
+	cmd = { "basedpyright" },
+	filetypes = { "py" },
 	settings = {
 		disableOrganizeImports = true,
 		basedpyright = {
@@ -9,4 +11,4 @@ vim.lsp.config("basedpyright", {
 			},
 		},
 	},
-})
+}
