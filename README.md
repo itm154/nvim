@@ -111,16 +111,17 @@
 <details>
 <summary>LSP</summary>
 
-| Keymap       | Action                |
-| :----------- | :-------------------- |
-| `gd`         | Go to Definition      |
-| `gD`         | Go to Declaration     |
-| `gI`         | Go to Implementation  |
-| `gT`         | Go to Type Definition |
-| `K`          | Hover Documentation   |
-| `[d`         | Next Diagnostic       |
-| `]d`         | Previous Diagnostic   |
-| `<leader>ca` | Code Actions          |
+| Keymap       | Action                    |
+| :----------- | :------------------------ |
+| `gd`         | Go to Definition          |
+| `gD`         | Go to Declaration         |
+| `gI`         | Go to Implementation      |
+| `gT`         | Go to Type Definition     |
+| `K`          | Hover Documentation       |
+| `[d`         | Next Diagnostic           |
+| `]d`         | Previous Diagnostic       |
+| `<leader>ca` | Code Actions              |
+| `<leader>ud` | Toggle Inline Diagnostics |
 
 </details>
 
