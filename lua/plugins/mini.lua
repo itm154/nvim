@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-mini/mini.comment",
+		event = "VeryLazy",
 		version = "*",
 		opts = {},
 	},
@@ -51,6 +52,7 @@ return {
 	},
 	{
 		"nvim-mini/mini.icons",
+		lazy = true,
 		config = function(_, opts)
 			local mini_icons = require("mini.icons")
 			local mock_nvim_web_devicons = opts.mock_nvim_web_devicons
