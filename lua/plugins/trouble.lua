@@ -6,17 +6,17 @@ return {
 		{
 			"<leader>tt",
 			"<cmd>Trouble diagnostics toggle<cr>",
-			desc = "Diagnostics (Trouble)",
+			desc = "Diagnostics",
 		},
 		{
 			"<leader>tb",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-			desc = "Buffer Diagnostics (Trouble)",
+			desc = "Buffer Diagnostics",
 		},
 		{
 			"<leader>tq",
 			"<cmd>Trouble qflist toggle<cr>",
-			desc = "Quickfix List (Trouble)",
+			desc = "Quickfix List",
 		},
 	},
 }

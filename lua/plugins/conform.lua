@@ -91,7 +91,7 @@ return {
 
 		-- Formatter Overrides
 		formatters = {
-			deno_fmt = { command = "deno", args = { "fmt", "-" } },
+			deno_fmt = { timeout_ms = 1000 },
 			prettier = { timeout_ms = 2000 },
 			prettierd = { timeout_ms = 2000 },
 		},

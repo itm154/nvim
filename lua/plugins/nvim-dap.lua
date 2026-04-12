@@ -11,7 +11,7 @@ return {
 			function()
 				require("dap").toggle_breakpoint()
 			end,
-			desc = "DAP: Toggle Break",
+			desc = "DAP: Toggle Breakpoint",
 		},
 		{
 			"<leader>dc",
@@ -25,14 +25,14 @@ return {
 			function()
 				require("dap.repl").open()
 			end,
-			desc = "DAP: Inspect",
+			desc = "DAP: Inspect REPL",
 		},
 		{
 			"<leader>dk",
 			function()
 				require("dap").terminate()
 			end,
-			desc = "DAP: Kill",
+			desc = "DAP: Terminate",
 		},
 		{
 			"<leader>dso",
