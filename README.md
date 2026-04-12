@@ -63,6 +63,7 @@
 - [img-clip.nvim](https://github.com/HakonHarnes/img-clip.nvim)
 - [nvim-java](https://github.com/nvim-java/nvim-java)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [mason.nvim](https://github.com/mason-org/mason.nvim)
 - [mini.nvim](https://github.com/echasnovski/mini.nvim)

@@ -105,6 +105,13 @@ return {
 			"dialog",
 			"msg",
 			"pager",
+			"dap-repl",
+			"dapui_console",
+			"dapui_scopes",
+			"dapui_breakpoints",
+			"dapui_stacks",
+			"dapui_watches",
+			"dapui_hover",
 		}
 
 		-- Auto-install parsers and enable highlighting on FileType
