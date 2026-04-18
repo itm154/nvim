@@ -1,23 +1,32 @@
 # itm154's Neovim config
 
-<img width="2690" height="1526" alt="image" src="https://github.com/user-attachments/assets/0f2b004c-b741-4a58-a4a1-9f574c383290" />
+<img src="https://github.com/user-attachments/assets/0f2b004c-b741-4a58-a4a1-9f574c383290" />
 
 ## Installation
 
-### Pre-requisite
+### Dependencies
 
-1. `nvim >= 0.12`
-2. `git`, `curl`, `unzip` (for plugin/tool installation)
-3. `gcc`, `make` (for Treesitter parsers)
-4. `fzf`, `ripgrep` (for fuzzy searching)
-5. `node`, `python3` (runtimes for LSPs and tools)
-6. `websocat` (required for `typst-preview`)
+- [Neovim](https://neovim.io/doc/install)
+- `git`
+- [fzf](https://github.com/junegunn/fzf)
+- A C compiler
+- [NodeJS](https://nodejs.org/en/download) for `npm`
+- [Python](https://www.python.org)
+- Any [Nerdfont](https://www.nerdfonts.com/) of your choosing
+
+Optional:
+
+- [websocat](https://github.com/vi/websocat) &
+  [tinymist](https://github.com/Myriad-Dreamin/tinymist) for typst-preview
+  support
+- [fd](https://github.com/sharkdp/fd) - better `find` utility
+- [rg](https://github.com/BurntSushi/ripgrep) - better `grep` utility
 
 ### 🐧 Linux
 
 1. **Install dependencies (Arch Linux):**
    ```bash
-   sudo pacman -S neovim git curl unzip base-devel fzf ripgrep nodejs python websocat
+   sudo pacman -S neovim git curl base-devel fzf ripgrep nodejs python websocat
    ```
 
 2. **Clean up previous installations:**
@@ -42,12 +51,12 @@
 
 1. **Install dependencies (WinGet):**
    ```powershell
-   winget install Neovim.Neovim Git.Git Python.Python.3 OpenJS.NodeJS Microsoft.VisualStudio.2022.BuildTools junegunn.fzf BurntSushi.ripgrep 7zip.7zip
+   winget install Neovim.Neovim Git.Git Python.Python.3 OpenJS.NodeJS Microsoft.VisualStudio.2022.BuildTools junegunn.fzf BurntSushi.ripgrep
    ```
 
    **Alternative for non-admin users ([Scoop](https://scoop.sh)):**
    ```powershell
-   scoop install neovim git ripgrep fzf python nodejs gcc 7zip
+   scoop install neovim git ripgrep fzf python nodejs tree-sitter
    ```
 
 2. **Clean up previous installations:**
@@ -68,7 +77,7 @@
    nvim
    ```
 
-## 📦 Plugins
+## 📦 Plugins Used
 
 - [blink.cmp](https://github.com/saghen/blink.cmp)
 - [blink.pairs](https://github.com/saghen/blink.pairs)
@@ -81,12 +90,13 @@
 - [nvim-java](https://github.com/nvim-java/nvim-java)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
+- [nvim-dap-view](https://github.com/igorlfs/nvim-dap-view)
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [mason.nvim](https://github.com/mason-org/mason.nvim)
 - [mini.nvim](https://github.com/echasnovski/mini.nvim)
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [tiny-code-action.nvim](https://github.com/rachartier/tiny-code-action.nvim)
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [tree-sitter-manager.nvim](https://github.com/romus204/tree-sitter-manager.nvim)
 - [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [typst-preview.nvim](https://github.com/chomosuke/typst-preview.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
@@ -104,7 +114,6 @@
 | `<leader>p` | Paste Image             |
 | `<C-s>`     | Save File               |
 | `<C-c>`     | Copy Whole File         |
-| `<Esc>`     | Clear Highlights        |
 
 </details>
 
@@ -143,14 +152,15 @@
 <details>
 <summary>Debugging (DAP)</summary>
 
-| Keymap        | Action            |
-| :------------ | :---------------- |
-| `<leader>dt`  | Toggle Breakpoint |
-| `<leader>dc`  | Continue / Start  |
-| `<leader>dk`  | Terminate         |
-| `<leader>dso` | Step Over         |
-| `<leader>dsi` | Step Into         |
-| `<leader>dsu` | Step Out          |
-| `<leader>dut` | Toggle Debug UI   |
+| Keymap        | Action              |
+| :------------ | :------------------ |
+| `<leader>dt`  | Toggle Breakpoint   |
+| `<leader>dc`  | Continue / Start    |
+| `<leader>dk`  | Terminate           |
+| `<leader>dso` | Step Over           |
+| `<leader>dsi` | Step Into           |
+| `<leader>dsu` | Step Out            |
+| `<leader>duu` | Toggle Debug UI     |
+| `<leader>duv` | Toggle Virtual Text |
 
 </details>
