@@ -56,3 +56,15 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 		vim.opt_local.cursorline = false
 	end,
 })
+
+-- Astro project fixes
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	group = vim.api.nvim_create_augroup("AstroProjectFixes", { clear = true }),
+	callback = function()
+		if vim.fn.filereadable("astro.config.mjs") == 1 or vim.fn.filereadable("astro.config.ts") == 1 then
+			vim.opt.backup = false
+			vim.opt.writebackup = false
+			vim.opt.swapfile = false
+		end
+	end,
+})

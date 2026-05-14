@@ -53,8 +53,8 @@ return {
 			typescript = prettier,
 			javascriptreact = prettier,
 			typescriptreact = prettier,
-			svelte = { lsp_format = "prefer" },
-			astro = { lsp_format = "prefer" },
+			svelte = prettier,
+			astro = { "prettier", "prettierd", stop_after_first = true },
 			css = prettier,
 			html = prettier,
 
@@ -86,14 +86,15 @@ return {
 			markdown = { "deno_fmt" },
 			sql = { "sqlfluff" },
 			xml = { "xmlformat", "xmllint", stop_after_first = true },
+			typst = { lsp_format = "prefer" },
 			["_"] = { "trim_whitespace" },
 		},
 
 		-- Formatter Overrides
 		formatters = {
 			deno_fmt = { timeout_ms = 1000 },
-			prettier = { timeout_ms = 2000 },
-			prettierd = { timeout_ms = 2000 },
+			prettier = { timeout_ms = 5000 },
+			prettierd = { timeout_ms = 5000 },
 		},
 	},
 }
