@@ -87,7 +87,6 @@ Optional:
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [img-clip.nvim](https://github.com/HakonHarnes/img-clip.nvim)
-- [nvim-java](https://github.com/nvim-java/nvim-java)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-view](https://github.com/igorlfs/nvim-dap-view)

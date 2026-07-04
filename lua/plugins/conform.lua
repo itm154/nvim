@@ -80,7 +80,6 @@ return {
 			-- Systems Programming Language
 			c = { "clang_format" },
 			cpp = { "clang_format" },
-			java = { lsp_format = "prefer" },
 
 			-- Docs & Others
 			markdown = { "deno_fmt" },
