@@ -76,6 +76,7 @@ return {
 			bash = shell,
 			sh = shell,
 			fish = { "fish_indent" },
+			nix = { "nixfmt" },
 
 			-- Systems Programming Language
 			c = { "clang_format" },

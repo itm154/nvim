@@ -21,6 +21,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+local rtp_paths = {}
+if vim.env.CONFIG_ROOT then
+	table.insert(rtp_paths, vim.env.CONFIG_ROOT)
+end
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
@@ -32,4 +37,9 @@ require("lazy").setup({
 	install = { colorscheme = { "catppuccin" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
+	performance = {
+		rtp = {
+			paths = rtp_paths,
+		},
+	},
 })

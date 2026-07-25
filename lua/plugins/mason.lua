@@ -1,3 +1,7 @@
+if vim.env.CONFIG_ROOT then
+	return {} -- Disable Mason when running via Nix
+end
+
 return {
 	{
 		"mason-org/mason-lspconfig.nvim",
