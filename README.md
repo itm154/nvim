@@ -22,7 +22,7 @@ Optional:
 - [fd](https://github.com/sharkdp/fd) - better `find` utility
 - [rg](https://github.com/BurntSushi/ripgrep) - better `grep` utility
 
-### 🐧 Linux
+### Linux
 
 1. **Install dependencies (Arch Linux):**
    ```bash
@@ -47,7 +47,7 @@ Optional:
    nvim
    ```
 
-### 🪟 Windows (PowerShell)
+### Windows (PowerShell)
 
 1. **Install dependencies (WinGet):**
    ```powershell
@@ -77,7 +77,7 @@ Optional:
    nvim
    ```
 
-## 📦 Plugins Used
+## Plugins Used
 
 - [blink.cmp](https://github.com/saghen/blink.cmp)
 - [blink.pairs](https://github.com/saghen/blink.pairs)
@@ -100,7 +100,7 @@ Optional:
 - [typst-preview.nvim](https://github.com/chomosuke/typst-preview.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
-## ⌨️ Keymaps
+## Keymaps
 
 <details>
 <summary>General</summary>
