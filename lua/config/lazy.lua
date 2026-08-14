@@ -25,6 +25,10 @@ local rtp_paths = {}
 if vim.env.CONFIG_ROOT then
 	table.insert(rtp_paths, vim.env.CONFIG_ROOT)
 end
+local ok, nix_info = pcall(require, "nix-info")
+if ok and nix_info.settings and nix_info.settings.config_directory then
+	table.insert(rtp_paths, nix_info.settings.config_directory)
+end
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -36,7 +40,7 @@ require("lazy").setup({
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "catppuccin" } },
 	-- automatically check for plugin updates
-	checker = { enabled = true },
+	checker = { enabled = false },
 	performance = {
 		rtp = {
 			paths = rtp_paths,

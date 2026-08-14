@@ -1,5 +1,5 @@
-if vim.env.CONFIG_ROOT then
-	return {} -- Disable Mason when running via Nix
+if vim.g.is_nix then
+	return {}
 end
 
 return {

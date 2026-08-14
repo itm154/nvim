@@ -5,7 +5,7 @@ return {
 	opts = {
 		dependencies_bin = {
 			["tinymist"] = "tinymist",
-			["websocat"] = "/usr/bin/websocat",
+			["websocat"] = "websocat",
 		},
 
 		port = 12354,
