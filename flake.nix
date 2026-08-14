@@ -54,11 +54,18 @@
             wl-clipboard
 
             # LSP Servers and Formatters
+
+            # Lua
             lua-language-server
             stylua
 
+            # Nix
             nixd
             nixfmt
+
+            # Python
+            basedpyright
+            ruff
           ];
         };
       in
