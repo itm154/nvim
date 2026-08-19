@@ -1,9 +1,15 @@
--- Must haves
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("nixd")
+local servers = {
+	-- Must haves
+	"lua_ls",
+	"nixd",
 
--- Others
-vim.lsp.enable("basedpyright")
-vim.lsp.enable("ruff")
+	-- Python
+	"basedpyright",
+	"ruff",
+}
+
+for _, server in ipairs(servers) do
+	vim.lsp.enable(server)
+end
 
 vim.api.nvim_create_user_command("LspInfo", "checkhealth vim.lsp", {})
