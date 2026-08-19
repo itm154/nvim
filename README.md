@@ -6,7 +6,7 @@
 
 ### Dependencies
 
-- [Neovim](https://neovim.io/doc/install)
+- [Neovim](https://neovim.io/doc/install) `>=0.12`
 - `git`
 - [fzf](https://github.com/junegunn/fzf)
 - A C compiler
@@ -22,7 +22,43 @@ Optional:
 - [fd](https://github.com/sharkdp/fd) - better `find` utility
 - [rg](https://github.com/BurntSushi/ripgrep) - better `grep` utility
 
-### Linux
+---
+
+### Nix/NixOs
+
+#### Try without installing
+```bash
+nix run github:itm154/nvim
+```
+
+#### Flake
+Add the inputs to `flake.nix`:
+```nix
+{
+    inputs = {
+        neovim.url = "github:itm154/nvim";
+        neovim.inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # ...
+}
+```
+
+Use either the neovim nixos/home manager module (recommended) or install as a standalone package:
+```nix
+programs.neovim = {
+    enable = true;
+    package = inputs.neovim.packages.${system}.default;
+    # ...
+};
+
+# or
+
+environment.systemPackages = [inputs.neovim.packages.${system}.default];
+```
+
+---
+
+### Other Linux Distro
 
 1. **Install dependencies (Arch Linux):**
    ```bash
@@ -46,6 +82,8 @@ Optional:
    ```bash
    nvim
    ```
+
+---
 
 ### Windows (PowerShell)
 
