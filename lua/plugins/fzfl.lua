@@ -57,6 +57,31 @@ return {
 			"<cmd>lua require('fzf-lua').files()<CR>",
 			desc = "Find Files",
 		},
+		{
+			"<leader>ca",
+			"<cmd>lua require('fzf-lua').lsp_code_actions()<CR>",
+			desc = "Code Actions",
+		},
+		{
+			"<leader>fx",
+			"<cmd>lua require('fzf-lua').diagnostics_document()<CR>",
+			desc = "Document Diagnostics",
+		},
+		{
+			"<leader>fX",
+			"<cmd>lua require('fzf-lua').diagnostics_workspace()<CR>",
+			desc = "Workspace Diagnostics",
+		},
+		{
+			"<leader>fq",
+			"<cmd>lua require('fzf-lua').quickfix()<CR>",
+			desc = "Quickfix List",
+		},
+		{
+			"<leader>fr",
+			"<cmd>lua require('fzf-lua').lsp_references()<CR>",
+			desc = "LSP References",
+		},
 	},
 	opts = {
 		backend = "delta",
@@ -95,4 +120,9 @@ return {
 		},
 		fzf_colors = { true },
 	},
+	config = function(_, opts)
+		local fzf = require("fzf-lua")
+		fzf.setup(opts)
+		fzf.register_ui_select()
+	end,
 }

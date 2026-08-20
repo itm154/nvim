@@ -1,8 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-mini/mini.icons", "bwpge/lualine-pretty-path", opts = {
-		mock_nvim_web_devicons = true,
-	} },
+	dependencies = {
+		"nvim-mini/mini.icons",
+	},
 	event = "VeryLazy",
 	config = function()
 		require("lualine").setup({
@@ -15,7 +15,18 @@ return {
 				lualine_a = {
 					{ "mode", separator = { left = "", right = "" }, icon = "" },
 				},
-				lualine_b = { "pretty_path" },
+				lualine_b = {
+					{
+						"filename",
+						path = 1,
+						symbols = {
+							modified = " ●",
+							readonly = " ",
+							unnamed = "[No Name]",
+							newfile = "[New]",
+						},
+					},
+				},
 				lualine_c = {},
 				lualine_x = {
 					{
@@ -37,8 +48,19 @@ return {
 				},
 			},
 			inactive_sections = {
-				lualine_a = { "filename" },
-				lualine_b = { "pretty_path" },
+				lualine_a = {},
+				lualine_b = {
+					{
+						"filename",
+						path = 1,
+						symbols = {
+							modified = " ●",
+							readonly = " ",
+							unnamed = "[No Name]",
+							newfile = "[New]",
+						},
+					},
+				},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},

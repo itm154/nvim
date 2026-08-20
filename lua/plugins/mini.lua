@@ -1,11 +1,5 @@
 return {
 	{
-		"nvim-mini/mini.comment",
-		event = "VeryLazy",
-		version = "*",
-		opts = {},
-	},
-	{
 		"nvim-mini/mini.cursorword",
 		version = "*",
 		event = { "BufReadPost", "BufNewFile" },

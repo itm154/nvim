@@ -1,3 +1,29 @@
+-- Replicate snacks.nvim rename module
+local function on_rename_file(from, to)
+	local changes = {
+		files = { {
+			oldUri = vim.uri_from_fname(from),
+			newUri = vim.uri_from_fname(to),
+		} },
+	}
+
+	local clients = vim.lsp.get_clients()
+	for _, client in ipairs(clients) do
+		if client:supports_method("workspace/willRenameFiles") then
+			local resp = client:request_sync("workspace/willRenameFiles", changes, 1000, 0)
+			if resp and resp.result ~= nil then
+				vim.lsp.util.apply_workspace_edit(resp.result, client.offset_encoding)
+			end
+		end
+	end
+
+	for _, client in ipairs(clients) do
+		if client:supports_method("workspace/didRenameFiles") then
+			client:notify("workspace/didRenameFiles", changes)
+		end
+	end
+end
+
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	dependencies = {
@@ -35,14 +61,21 @@ return {
 		},
 	},
 	opts = function(_, opts)
-		local function on_move(data)
-			Snacks.rename.on_rename_file(data.source, data.destination)
-		end
 		local events = require("neo-tree.events")
 		opts.event_handlers = opts.event_handlers or {}
 		vim.list_extend(opts.event_handlers, {
-			{ event = events.FILE_MOVED, handler = on_move },
-			{ event = events.FILE_RENAMED, handler = on_move },
+			{
+				event = events.FILE_MOVED,
+				handler = function(data)
+					on_rename_file(data.source, data.destination)
+				end,
+			},
+			{
+				event = events.FILE_RENAMED,
+				handler = function(data)
+					on_rename_file(data.source, data.destination)
+				end,
+			},
 		})
 
 		opts.filesystem = {

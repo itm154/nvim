@@ -27,12 +27,15 @@ Optional:
 ### Nix/NixOs
 
 #### Try without installing
+
 ```bash
 nix run github:itm154/nvim
 ```
 
 #### Flake
+
 Add the inputs to `flake.nix`:
+
 ```nix
 {
     inputs = {
@@ -44,6 +47,7 @@ Add the inputs to `flake.nix`:
 ```
 
 Use either the neovim nixos/home manager module (recommended) or install as a standalone package:
+
 ```nix
 programs.neovim = {
     enable = true;
@@ -61,11 +65,13 @@ environment.systemPackages = [inputs.neovim.packages.${system}.default];
 ### Other Linux Distro
 
 1. **Install dependencies (Arch Linux):**
+
    ```bash
    sudo pacman -S neovim git curl base-devel fzf ripgrep nodejs python websocat
    ```
 
 2. **Clean up previous installations:**
+
    ```bash
    rm -rf ~/.config/nvim
    rm -rf ~/.local/share/nvim
@@ -74,6 +80,7 @@ environment.systemPackages = [inputs.neovim.packages.${system}.default];
    ```
 
 3. **Clone the repository:**
+
    ```bash
    git clone https://github.com/itm154/nvim ~/.config/nvim
    ```
@@ -88,16 +95,19 @@ environment.systemPackages = [inputs.neovim.packages.${system}.default];
 ### Windows (PowerShell)
 
 1. **Install dependencies (WinGet):**
+
    ```powershell
    winget install Neovim.Neovim Git.Git Python.Python.3 OpenJS.NodeJS Microsoft.VisualStudio.2022.BuildTools junegunn.fzf BurntSushi.ripgrep
    ```
 
    **Alternative for non-admin users ([Scoop](https://scoop.sh)):**
+
    ```powershell
    scoop install neovim git ripgrep fzf python nodejs tree-sitter
    ```
 
 2. **Clean up previous installations:**
+
    ```powershell
    Remove-Item -Recurse -Force $HOME\AppData\Local\nvim
    Remove-Item -Recurse -Force $HOME\AppData\Local\nvim-data
@@ -106,6 +116,7 @@ environment.systemPackages = [inputs.neovim.packages.${system}.default];
    ```
 
 3. **Clone the repository:**
+
    ```powershell
    git clone https://github.com/itm154/nvim $HOME\AppData\Local\nvim
    ```
@@ -132,7 +143,6 @@ environment.systemPackages = [inputs.neovim.packages.${system}.default];
 - [mason.nvim](https://github.com/mason-org/mason.nvim)
 - [mini.nvim](https://github.com/echasnovski/mini.nvim)
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
-- [tiny-code-action.nvim](https://github.com/rachartier/tiny-code-action.nvim)
 - [tree-sitter-manager.nvim](https://github.com/romus204/tree-sitter-manager.nvim)
 - [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [typst-preview.nvim](https://github.com/chomosuke/typst-preview.nvim)
@@ -149,6 +159,7 @@ environment.systemPackages = [inputs.neovim.packages.${system}.default];
 | `<leader>n` | Toggle Relative Numbers |
 | `<leader>x` | Close Buffer            |
 | `<leader>p` | Paste Image             |
+| `<leader>?` | Buffer Local Keymaps    |
 | `<C-s>`     | Save File               |
 | `<C-c>`     | Copy Whole File         |
 
@@ -174,15 +185,23 @@ environment.systemPackages = [inputs.neovim.packages.${system}.default];
 <details>
 <summary>Search (fzf-lua)</summary>
 
-| Keymap       | Action            |
-| :----------- | :---------------- |
-| `<leader>ff` | Find Files        |
-| `<leader>fa` | Find All Files    |
-| `<leader>fw` | Live Grep         |
-| `<leader>fb` | Find Buffers      |
-| `<leader>fo` | Recent Files      |
-| `<leader>fs` | Workspace Symbols |
-| `<leader>fd` | Document Symbols  |
+| Keymap       | Action                |
+| :----------- | :-------------------- |
+| `<leader>ff` | Find Files            |
+| `<leader>fa` | Find All Files        |
+| `<leader>fw` | Live Grep             |
+| `<leader>fb` | Find Buffers          |
+| `<leader>fo` | Recent Files          |
+| `<leader>fs` | Workspace Symbols     |
+| `<leader>fd` | Document Symbols      |
+| `<leader>fx` | Document Diagnostics  |
+| `<leader>fX` | Workspace Diagnostics |
+| `<leader>fq` | Quickfix List         |
+| `<leader>fr` | LSP References        |
+| `<leader>fh` | Help Pages            |
+| `<leader>fm` | Find Marks            |
+| `<leader>fc` | Git Commits           |
+| `<leader>fg` | Git Status            |
 
 </details>
 
