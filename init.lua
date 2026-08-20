@@ -5,4 +5,11 @@ require("config.lazy")
 require("config.keymaps")
 require("config.options")
 require("config.autocmds")
-require("lsp")
+
+-- Load lsp configuration asynchronously
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		require("lsp")
+	end,
+})
