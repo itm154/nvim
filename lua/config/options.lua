@@ -43,3 +43,6 @@ vim.opt.undofile = true
 
 -- Keep cursor 4 lines from screen edge when scrolling
 vim.opt.scrolloff = 4
+
+-- External/local project config
+vim.opt.exrc = true
