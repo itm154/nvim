@@ -63,6 +63,9 @@
             # Python
             basedpyright
             ruff
+
+            # Typst
+            tinymist
           ];
         };
       in

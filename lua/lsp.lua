@@ -6,6 +6,7 @@ local servers = {
 	-- Python
 	"basedpyright",
 	"ruff",
+	"tinymist",
 }
 
 for _, server in ipairs(servers) do
