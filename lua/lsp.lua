@@ -6,6 +6,8 @@ local servers = {
 	-- Python
 	"basedpyright",
 	"ruff",
+
+	-- Etc
 	"tinymist",
 }
 
